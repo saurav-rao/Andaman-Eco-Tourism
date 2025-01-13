@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munda Pahad Beach - Andaman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.b1ZdoH4R1fX90N-BooDo3wHaE8&pid=Api');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        section {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 1rem;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .popup-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .popup-arrow.left {
+            left: 20px;
+        }
+        .popup-arrow.right {
+            right: 20px;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+        const images = [
+            "https://tse1.mm.bing.net/th?id=OIP.b1ZdoH4R1fX90N-BooDo3wHaE8&pid=Api",
+            "https://tse4.mm.bing.net/th?id=OIP.72a6_r9x5eBr84k0NmPxowHaFj&pid=Api",
+            "https://tse3.mm.bing.net/th?id=OIP.q7GWgRW7k6U-UmZY-AvnAQHaFj&pid=Api"
+        ];
+
+        function showPopup(index) {
+            currentIndex = index;
+            const popup = document.getElementById('image-popup');
+            const popupImage = document.getElementById('popup-image');
+            popupImage.src = images[currentIndex];
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('image-popup');
+            popup.style.display = 'none';
+        }
+
+        function navigatePopup(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            const popupImage = document.getElementById('popup-image');
+            popupImage.src = images[currentIndex];
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Munda Pahad Beach</h1>
+    <p>Discover the tranquil beauty of Munda Pahad Beach in the Andaman Islands</p>
+</header>
+
+<section>
+    <div class="container">
+        <h2>About Munda Pahad Beach</h2>
+        <p>Munda Pahad Beach is a serene destination located in Chidiya Tapu, Andaman. Known for its breathtaking views, this beach offers a tranquil escape from the bustling city life. The lush green surroundings and crystal-clear waters make it a perfect spot for nature lovers.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Visiting Hours</h2>
+        <p>The beach is accessible from sunrise to sunset. Visitors are encouraged to leave the beach before nightfall as it is located in a remote area.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Map</h2>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=munda pahad beach&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <a href="https://sprunkiplay.com">Sprunki</a>
+            </div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    width: 600px;
+                    height: 400px;
+                }
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none!important;
+                    width: 600px;
+                    height: 400px;
+                }
+                .gmap_iframe {
+                    width: 600px!important;
+                    height: 400px!important;
+                }
+            </style>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Photos</h2>
+        <div class="grid">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.b1ZdoH4R1fX90N-BooDo3wHaE8&pid=Api" alt="Munda Pahad Beach View" onclick="showPopup(0)">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.72a6_r9x5eBr84k0NmPxowHaFj&pid=Api" alt="Peaceful Escape in Andaman" onclick="showPopup(1)">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.q7GWgRW7k6U-UmZY-AvnAQHaFj&pid=Api" alt="Trekking Trail to Munda Pahad Beach" onclick="showPopup(2)">
+        </div>
+    </div>
+</section>
+
+<div id="image-popup" class="popup">
+    <button class="popup-close" onclick="closePopup()">&times;</button>
+    <button class="popup-arrow left" onclick="navigatePopup(-1)">&#8249;</button>
+    <img id="popup-image" src="" alt="Popup Image">
+    <button class="popup-arrow right" onclick="navigatePopup(1)">&#8250;</button>
+</div>
+
+<section>
+    <div class="container">
+        <h2>Amenities</h2>
+        <p>The beach provides basic amenities such as restrooms, changing rooms, and seating areas. Food and beverages are available from local vendors near the beach.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Best Time to Visit</h2>
+        <p>The best time to visit Munda Pahad Beach is between October and April when the weather is pleasant, and the sea is calm, making it ideal for outdoor activities.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Things to Do</h2>
+        <div class="grid">
+            <div>
+                <img src="https://tse1.mm.bing.net/th?id=OIP.4SGCemGhgD9AmQD5_hGocQHaFj&pid=Api" alt="Trekking to Munda Pahad">
+                <h3>Trekking</h3>
+                <p>Embark on a scenic trek through the lush green trails leading to the beach.</p>
+            </div>
+            <div>
+                <img src="https://tse1.mm.bing.net/th?id=OIP.b1ZdoH4R1fX90N-BooDo3wHaE8&pid=Api" alt="Photography at Munda Pahad">
+                <h3>Photography</h3>
+                <p>Capture stunning views of the coastline and surrounding greenery.</p>
+            </div>
+            <div>
+                <img src="https://tse4.mm.bing.net/th?id=OIP.72a6_r9x5eBr84k0NmPxowHaFj&pid=Api" alt="Relaxation at Munda Pahad">
+                <h3>Relaxation</h3>
+                <p>Enjoy the serene environment and unwind amidst nature.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Nearby Places</h2>
+        <div class="grid">
+            <div>
+                <img src="https://tse3.mm.bing.net/th?id=OIP.kU5hmJjiwDzdONr1sSrswwHaEK&pid=Api" alt="Chidiya Tapu Sunset">
+                <h3>Chidiya Tapu</h3>
+                <p>A nearby attraction known for its birdwatching opportunities and picturesque sunsets.</p>
+            </div>
+            <div>
+                <img src="https://tse2.mm.bing.net/th?id=OIP.b8WMP6ljnwnFNpdRWRWGSwHaDp&pid=Api" alt="Biological Park">
+                <h3>Biological Park</h3>
+                <p>Explore the biodiversity of the Andaman Islands at this well-maintained park.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Andaman Tourism. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

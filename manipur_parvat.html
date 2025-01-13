@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipur Parvat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('https://i.ytimg.com/vi/-rOa3kpmk8E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCwl9stalAcUDYdm_aA6kCujWeNMw');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        section {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 1rem;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .popup .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transform: translateY(-50%);
+        }
+        .popup .arrow.left {
+            left: 20px;
+        }
+        .popup .arrow.right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Manipur Parvat</h1>
+    <p>Explore the serene landscapes and rich biodiversity of Manipur Parvat</p>
+</header>
+
+<section>
+    <div class="container">
+        <h2>About Manipur Parvat</h2>
+        <p>Manipur Parvat, also known as Mount Harriet, is the third-highest peak in the Andaman and Nicobar Islands. It is renowned for its lush greenery, diverse flora and fauna, and panoramic views of the surrounding islands and sea.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Visiting Hours</h2>
+        <p>The park is open to visitors from 7:00 AM to 5:00 PM daily. It is advisable to visit during daylight hours to fully experience the natural beauty and for safety reasons.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>How to Reach</h2>
+        <p>Manipur Parvat is located approximately 20 kilometers from Port Blair. Visitors can reach the base by road, followed by a trek to the peak. Alternatively, ferries are available from Chatham Wharf to Bambooflat, followed by a drive to the park entrance.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Map</h2>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                        style="width: 100%; height: 400px; border: 0;" 
+                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Mount Harriet National Park&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Photos</h2>
+        <div class="grid">
+            <img src="https://www.andamanocean.in/wp-content/uploads/2023/04/mount-harriet-image2-1024x683.jpg" alt="Manipur Parvat View" onclick="showPopup(0)">
+            <img src="https://i0.wp.com/ukhrultimes.com/wp-content/uploads/2024/03/Inside-Manipur-Parvat-National-Park-Andaman.jpg?resize=696%2C398&ssl=1" alt="Lush Greenery at Manipur Parvat" onclick="showPopup(1)">
+            <img src="https://www.andamanworldtravels.com/images-new/places-2/mount-harriet-port-blair-andaman.webp" alt="Panoramic View from Manipur Parvat" onclick="showPopup(2)">
+        </div>
+    </div>
+</section>
+
+<div id="photo-popup" class="popup">
+    <button class="close" onclick="closePopup()">&times;</button>
+    <button class="arrow left" onclick="navigatePopup(-1)">&#8249;</button>
+    <img id="popup-image" src="" alt="Popup Image">
+    <button class="arrow right" onclick="navigatePopup(1)">&#8250;</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = [
+        "https://www.andamanocean.in/wp-content/uploads/2023/04/mount-harriet-image2-1024x683.jpg",
+        "https://i0.wp.com/ukhrultimes.com/wp-content/uploads/2024/03/Inside-Manipur-Parvat-National-Park-Andaman.jpg?resize=696%2C398&ssl=1",
+        "https://www.andamanworldtravels.com/images-new/places-2/mount-harriet-port-blair-andaman.webp"
+    ];
+
+    function showPopup(index) {
+        currentIndex = index;
+        const popup = document.getElementById('photo-popup');
+        const popupImage = document.getElementById('popup-image');
+        popupImage.src = images[currentIndex];
+        popup.style.display = 'flex';
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('photo-popup');
+        popup.style.display = 'none';
+    }
+
+    function navigatePopup(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        const popupImage = document.getElementById('popup-image');
+        popupImage.src = images[currentIndex];
+    }
+</script>
+
+<section>
+    <div class="container">
+        <h2>Things to Do</h2>
+        <div class="grid">
+            <div>
+                <img src="https://www.andamanisland.in/assets/site1/theme3/images/trekking-at-andaman-island/Trekking-in-Andaman-1.jpg" alt="Trekking at Manipur Parvat">
+                <h3>Trekking</h3>
+                <p>Embark on scenic trekking trails that lead through dense forests to the summit, offering breathtaking views.</p>
+            </div>
+            <div>
+                <img src="data:image/jpeg;base64,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" alt="Bird Watching at Manipur Parvat">
+                <h3>Bird Watching</h3>
+                <p>Spot a variety of endemic and migratory birds in their natural habitat.</p>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmZX0ZgEuFhZuvlW4R0n-xEL3YQwJOy3kdFA&s" alt="Photography at Manipur Parvat">
+                <h3>Photography</h3>
+                <p>Capture the stunning landscapes, flora, and fauna that the park has to offer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Nearby Places</h2>
+        <div class="grid">
+            <div>
+                <img src="https://www.andamandiscover.com/images/221720290338.jpg" alt="Kalapathar Beach">
+                <h3>Kalapathar Beach</h3>
+                <p>A serene beach known for its black rocks and clear waters, perfect for relaxation.</p>
+            </div>
+            <div>
+                <img src="https://dekhoandaman.com/wp-content/uploads/2023/08/Chdiaya-tapu-attraction-The-Munda-Pahad-Beach-960x450.jpeg" alt="Chidiya Tapu">
+                <h3>Chidiya Tapu</h3>
+                <p>Also known as Bird Island, it's a haven for bird watchers and offers mesmerizing sunset views.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Andaman Tourism. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

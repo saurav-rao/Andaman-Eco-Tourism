@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andaman Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+        header { background: url('https://travelovibe.com/holiday/wp-content/uploads/2023/08/Andaman-P1.webp') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #008080;
+            padding: 10px;
+        }
+        nav a { text-decoration: none; color: white; margin: 0 15px; font-weight: 600; }
+        nav a:hover { color: lightgray; }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card-item { flex: 1 1 calc(33% - 20px); background-color: #f4f4f4; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center; color: #333; text-decoration: none; }
+        .card-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .card-item h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Andaman Tourism</h1>
+        <p>Explore the pristine beauty of Andaman Islands</p>
+    </header>
+
+    <nav>
+        <a href="#places">Places to Visit</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#transport">Transport</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="places">
+        <h2>Top Places to Visit</h2>
+        <div class="card">
+            <a href="chidiyatapu.html" class="card-item">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.QpL9rfb2irNcDxGTvT3c7wHaFj&pid=Api" alt="Chidiyatapu Biological Park">
+                <h3>Chidiyatapu Biological Park</h3>
+                <p>A paradise for bird watchers and nature enthusiasts, showcasing the rich biodiversity of the Andaman Islands.</p>
+            </a>
+            <a href="munda_pahad.html" class="card-item">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.24JEYCZJveCY_JiFwowHjgHaEK&pid=Api" alt="Munda Pahad Beach">
+                <h3>Munda Pahad Beach</h3>
+                <p>Known for its serene environment and picturesque sunsets, perfect for a peaceful retreat.</p>
+            </a>
+            <a href="jolly_buoy.html" class="card-item">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.7qPwzNvu2I_xh-TkqkXF5wHaEo&pid=Api" alt="Jolly Buoy">
+                <h3>Jolly Buoy</h3>
+                <p>Famous for its crystal-clear waters and vibrant coral reefs, ideal for snorkeling and underwater adventures.</p>
+            </a>
+            <a href="manipur_parvat.html" class="card-item">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.jnRr-EZe5F_aEFdcooj_ygHaEK&pid=Api" alt="Manipur Parvat">
+                <h3>Manipur Parvat</h3>
+                <p>A majestic hill offering breathtaking views and a serene atmosphere, great for trekking and nature walks.</p>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Map</h2>
+            <p>Chidiya Tapu is located at the southernmost tip of South Andaman Island. For precise navigation, use GPS services or consult local maps.</p>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=chidiya tapu&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    </iframe>
+                </div>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        width: 100%;
+                        height: 400px;
+                    }
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none!important;
+                        width: 100%;
+                        height: 400px;
+                    }
+                    .gmap_iframe {
+                        height: 400px!important;
+                    }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotels">
+        <h2>Hotels and Resorts</h2>
+        <p>Find the best accommodations for your stay in Andaman.</p>
+    </section>
+
+    <section id="transport">
+        <h2>Modes of Transport</h2>
+        <p>Learn about ferries, taxis, and other transport options for seamless travel.</p>
+    </section>
+
+    <section id="activities">
+        <h2>Activities and Experiences</h2>
+        <p>Scuba diving, snorkeling, and cultural experiences await you!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Andaman Tourism. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
